@@ -63,7 +63,7 @@ table td{
 }
 .nav-ws>li,
 .userInfo>li{
-    positive:relative;
+    position:relative;
     display:block;
     padding: 16px 0;
 

@@ -17,6 +17,8 @@
 
     <script src="https://cdn.bootcss.com/modernizr/2.8.3/modernizr.js"></script>
     <script src="../node_modules/angular/angular.min.js"></script>
+    <script src="../js/controller/app.js"></script>
+    <script src="../js/directive/nav_tabs.js"></script>
 
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -27,8 +29,10 @@
 
     <![endif]-->
 </head>
-<body ng-app class="flow-repo-body">
+<body ng-app="app"  ng-controller="AppController" class="flow-repo-body">
+
 <div class="container-fluid">
+    <nav_tabs></nav_tabs>
     <div ng-include="'flow/flow_header.html'"></div>
     <div ng-include="'flow/flow_navigator.html'"></div>
     <div ng-include="'flow/flow_content.html'"></div>
