@@ -1,1 +1,1 @@
-# ws_platform_angular
+# ws-project-angular
