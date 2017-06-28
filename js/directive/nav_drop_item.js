@@ -19,7 +19,6 @@
             }
         }
     });
-
     function gettemplate(scope,element,attr) {
         //html
         let dataArr=scope.dropitems;
