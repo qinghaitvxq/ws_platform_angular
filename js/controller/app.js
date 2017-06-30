@@ -2,7 +2,7 @@
  * Created by caipf on 2017/6/26.
  */
 
-let app=angular.module('app',['ngRoute']);
+let app=angular.module('app',['ui.router']);
 let AppController=function ($scope) {
     $scope.test="hello world";
 }
@@ -23,28 +23,32 @@ let FlowController=function ($scope) {
 app.controller("AppController",AppController);
 app.controller("FlowController",FlowController);
 
-app.config(function ($routeProvider) {
-    $routeProvider
-        .when("/index",{
+app.config(function ($stateProvider,$urlRouterProvider) {
+    $urlRouterProvider.otherwise("/index");
+    $stateProvider
+        .state("index",{
+            url:"/index",
             templateUrl:"/ws_platform_angular/pages/navPage/flow_index.html",
             controller:'FlowController'
         })
-        .when("/mine",{
+        .state("mine",{
+            url:"/mine",
             templateUrl:"/ws_platform_angular/pages/navPage/mine_index.html"
         })
-        .when("/project",{
+        .state("project",{
+            url:"/project",
             templateUrl:"/ws_platform_angular/pages/navPage/project_index.html"
         })
-        .when("/createproject",{
+        .state("createproject",{
+            url:"/createproject",
             templateUrl:"/ws_platform_angular/pages/navPage/createproject.html"
         })
-        .when("/managepanel",{
+        .state("managepanel",{
+            url:"/managepanel",
             templateUrl:"/ws_platform_angular/pages/navPage/managepanel.html"
         })
-        .when("/flow_detail",{
+        .state("flow_detail",{
+            url:"/flow_detail",
             templateUrl:"/ws_platform_angular/pages/flow_detail.html"
-        })
-        .otherwise({
-           redirectTo:"/index"
         });
 });
