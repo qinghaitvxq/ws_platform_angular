@@ -2,7 +2,7 @@
  * Created by caipf on 2017/6/26.
  */
 
-let app=angular.module('app',['ui.router']);
+let app=angular.module('app',['ui.router','ui.grid']);
 let AppController=function ($scope) {
     $scope.test="hello world";
 }
@@ -19,6 +19,20 @@ let FlowController=function ($scope) {
         "title":"行政类",
         "items":["1111","2222","3333"]
     }];
+    $scope.myData=[{
+        "tCategory":"hello1",
+        "sCategory":"hello2",
+        "name":"测试",
+        "mtname":"璐璐",
+        "utime":"2017-06-28"
+    },{
+        "tCategory":"test1",
+        "sCategory":"test2",
+        "name":"白白",
+        "mtname":"冬季",
+        "utime":"2017-06-29"
+    }];
+
 }
 app.controller("AppController",AppController);
 app.controller("FlowController",FlowController);
