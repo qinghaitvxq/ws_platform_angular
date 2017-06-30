@@ -41,6 +41,9 @@ app.config(function ($routeProvider) {
         .when("/managepanel",{
             templateUrl:"/ws_platform_angular/pages/navPage/managepanel.html"
         })
+        .when("/flow_detail",{
+            templateUrl:"/ws_platform_angular/pages/flow_detail.html"
+        })
         .otherwise({
            redirectTo:"/index"
         });
