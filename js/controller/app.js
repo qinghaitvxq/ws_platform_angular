@@ -20,7 +20,7 @@ let FlowController=function ($scope,$state) {
         "items":["1111","2222","3333"]
     }];
     $scope.onDblClickRow=function (rowItem) {
-        $state.go('flow_detail',{fid:rowItem.entity.fid});
+        $state.go('flow_detail.flowtree',{fid:rowItem.entity.fid});
     };
     $scope.myData=[{
         "tCategory":"hello1",
@@ -111,20 +111,20 @@ app.config(function ($stateProvider,$urlRouterProvider) {
             url:"/flow_detail/{fid}",
             templateUrl:"/ws_platform_angular/pages/flow_detail.html"
         })
-        .state("flow_detail.flowtree",{
-            url:"/flowtree",
-            templateUrl:"/ws_platform_angular/pages/flow_detail_flowtree.html"
-        })
-        .state("flow_detail.loglist",{
-            url:"/loglist",
-            templateUrl:"/ws_platform_angular/pages/flow_detail_loglist.html"
-        })
-        .state("flow_detail.doc",{
-             url:"/doc",
-             templateUrl:"/ws_platform_angular/pages/flow_detail_doc.html"
-        })
-        .state("flow_detail.management",{
-            url:"/management",
-            templateUrl:"/ws_platform_angular/pages/flow_detail_management.html"
-        });
+                    .state("flow_detail.flowtree",{
+                        url:"/flowtree",
+                        templateUrl:"/ws_platform_angular/pages/flow_detail_flowtree.html"
+                    })
+                    .state("flow_detail.loglist",{
+                        url:"/loglist",
+                        templateUrl:"/ws_platform_angular/pages/flow_detail_loglist.html"
+                    })
+                    .state("flow_detail.doc",{
+                         url:"/doc",
+                         templateUrl:"/ws_platform_angular/pages/flow_detail_doc.html"
+                    })
+                    .state("flow_detail.management",{
+                        url:"/management",
+                        templateUrl:"/ws_platform_angular/pages/flow_detail_management.html"
+                    });
 });
