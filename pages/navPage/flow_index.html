@@ -14,7 +14,9 @@
         <div class="col-md-10 flow-repo-content" >
             <!--<d_table>-->
             <!--</d_table>-->
-            <div ui-grid="{data:myData}" class="myGrid"></div>
+
+            <!--<div  class="myGrid"  ng-grid="gridOptions"></div>-->
+            <div  ui-grid="gridOptions"  class="myGrid" ng-dblclick="navigatetest(row)"></div>
         </div>
         <div class="col-md-1" ></div>
     </div>

@@ -6,7 +6,7 @@ let app=angular.module('app',['ui.router','ui.grid']);
 let AppController=function ($scope) {
     $scope.test="hello world";
 }
-let FlowController=function ($scope) {
+let FlowController=function ($scope,$state) {
     $scope.navDropItem=[{
         "title":"全部"
     },{
@@ -19,19 +19,65 @@ let FlowController=function ($scope) {
         "title":"行政类",
         "items":["1111","2222","3333"]
     }];
+    $scope.onDblClickRow=function (rowItem) {
+        $state.go('flow_detail',{fid:rowItem.entity.fid});
+    };
     $scope.myData=[{
         "tCategory":"hello1",
         "sCategory":"hello2",
         "name":"测试",
         "mtname":"璐璐",
-        "utime":"2017-06-28"
+        "utime":"2017-06-28",
+        "fid":"001"
     },{
         "tCategory":"test1",
         "sCategory":"test2",
         "name":"白白",
         "mtname":"冬季",
-        "utime":"2017-06-29"
+        "utime":"2017-06-29",
+        "fid":"002",
+    },{
+        "tCategory":"test3",
+        "sCategory":"test3",
+        "name":"白白3",
+        "mtname":"冬季3",
+        "utime":"2017-07-29",
+        "fid":"003"
     }];
+
+    $scope.columns = [{field:'tCategory',displayName:'第一类别'},
+                        {field:'sCategory',displayName:'第一类别'},
+                        {field:'name',displayName:'创建人'},
+                        {field:'mtname',displayName:'维护人'},
+                        {field:'utime',displayName:'更新时间'}];
+
+    $scope.rowTemplate=`<div ng-repeat="(colRenderIndex, col) in colContainer.renderedColumns track by col.uid"
+    ui-grid-one-bind-id-grid="rowRenderIndex + '-' + col.uid + '-cell'"
+    class="ui-grid-cell"
+    ng-class="{ 'ui-grid-row-header-cell': col.isRowHeader }"
+    role="{{col.isRowHeader ? 'rowheader' : 'gridcell'}}"
+    ng-dblclick="grid.appScope.onDblClickRow(row)"
+    ui-grid-cell>`;
+
+    $scope.gridOptions = {
+        enableSorting: true,
+        enableRowSelection: true,
+        columnDefs: $scope.columns,
+        data:$scope.myData,
+        rowTemplate: $scope.rowTemplate
+
+
+        // onRegisterApi:function (gridApi) {
+        //     $scope.gridApi = gridApi;
+        //     gridApi.selection.on.rowSelectionChanged($scope,function (row) {
+        //
+        //         var msg='row selected '+ row.isSelected;
+        //         console.log(msg);
+        //         $state.go("flow_detail",{fid:'1'})
+        //     });
+        // }
+    };
+
 
 }
 app.controller("AppController",AppController);
@@ -62,7 +108,7 @@ app.config(function ($stateProvider,$urlRouterProvider) {
             templateUrl:"/ws_platform_angular/pages/navPage/managepanel.html"
         })
         .state("flow_detail",{
-            url:"/flow_detail",
+            url:"/flow_detail/{fid}",
             templateUrl:"/ws_platform_angular/pages/flow_detail.html"
         });
 });
