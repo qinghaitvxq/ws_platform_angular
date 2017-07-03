@@ -7,7 +7,7 @@
         return{
             restrict:'A',
             link:function (scope,element,attrs) {
-                $(element).find('.easy-tree').EasyTree({
+                $(element).find('.easy-tree').myEasyTree({
                     showtips:true,
                     collapseAll:true
                 });
