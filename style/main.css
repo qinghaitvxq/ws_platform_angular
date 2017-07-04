@@ -268,7 +268,7 @@ table td{
 }
 .nav-bar-detail div{
     line-height: 60px;
-    width:30%;
+    /*width:30%;*/
 }
 .flow-info{
     float: left;
