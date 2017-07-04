@@ -1,0 +1,126 @@
+<button class="btn new-flow" data-toggle="modal" data-target="#myModal" data-backdrop="static">
+    <span class="glyphicon glyphicon-plus"></span>
+    <span>创建新流程</span>
+</button>
+
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">创建新流程</h4>
+            </div>
+            <div class="modal-body">
+                <div class="new-flow-form">
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label >第一类别</label>
+                            <select class="form-control">
+                                <option>hello</option>
+                                <option>hello</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label >第一类别</label>
+                            <select class="form-control">
+                                <option>hello</option>
+                                <option>hello</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label >流程管理人</label>
+                            <select class="form-control">
+                                <option>hello</option>
+                                <option>hello</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label >第三类别</label>
+                            <input  class="form-control" >
+                        </div>
+                        <div class="form-group">
+                            <label >内容简介绍(限140字符)</label>
+                            <textarea class="form-control" rows="3"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label >编辑流程图(最多可添加三级节点)</label>
+                        </div>
+                        <!--<div class="form-group">-->
+                        <!--<ul id="flowtree">-->
+
+                        <!--</ul>-->
+                        <!--</div>-->
+
+                        <div class="form-group">
+
+                            <ul id="flowtree" >
+                                <li >
+                                    <div >
+                                        <input  class="form-control" placeholder="节点名称"  value="hehhahahe">
+                                        <textarea class="form-control" rows="3" placeholder="节点解释说明">haha</textarea>
+                                    </div>
+                                    <ul>
+                                        <li >
+                                            <div>
+                                                <input  class="form-control" value="test" >
+                                                <textarea class="form-control" rows="3" >test desc</textarea>
+                                            </div>
+                                            <ul>
+                                                <li>
+                                                    <div >
+                                                        <input  class="form-control"  value="hello">
+                                                        <textarea class="form-control" rows="3" > hello desc</textarea>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li  >
+                                            <div >
+
+                                                <input  class="form-control"  value="hi">
+                                                <textarea class="form-control" rows="3" >hi desc</textarea>
+                                            </div>
+                                            <ul>
+                                                <li>
+                                                    <div >
+
+                                                        <input  class="form-control" value="keep" >
+                                                        <textarea class="form-control" rows="3" > keep going</textarea>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="form-group">
+                            <label >流程说明</label>
+                            <textarea class="form-control" rows="3"></textarea>
+                        </div>
+
+
+                        <div class="form-group " id="div_file">
+                            <input type="file" name="" id="my_file_upload" multiple="multiple">
+                        </div>
+
+                        <div class="form-group btn-red-font" id="div_file_tips">
+                            <span class="glyphicon glyphicon-volume-up"></span>&nbsp;<span>IE10以下版本可在文件管理页进行附件上传</span>
+                        </div>
+
+                        <!--<div class="form-group" id="edit-file-div">-->
+                        <!--<input type="file" name="" id="my_file_upload_edit" multiple="multiple">-->
+                        <!--</div>-->
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <span class="error-info">您输入的信息有误！</span>
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary">保存</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -9,7 +9,11 @@
             link:function (scope,element,attrs) {
                 $(element).find('.easy-tree').myEasyTree({
                     showtips:true,
-                    collapseAll:true
+                    collapseAll:true,
+                    newNodeIcon:{
+                        parentIcon:"glyphicon-plus",
+                        childIcon:"glyphicon-minus"
+                    }
                 });
             }
         }
